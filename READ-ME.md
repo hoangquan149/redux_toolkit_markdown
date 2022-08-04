@@ -86,6 +86,39 @@ export default counterSlice.reducer
 
 ```
 
+### Phân biệt `createSlice` và `createReducer`
+
+-  `createReducer`, kiểm soát dễ hơn đối với names/types `createAction` có thể viết hoa tên action
+-  `createSlice` action types tự sinh tiền tố mặc đinh là field name và `createSlice` sẽ viết ít dài dòng hơn `createReducer`
+
+VD:
+
+```
+// sử dụng createReducer
+
+const login = createAction('auth/LOGIN')
+const register = createAction('auth/REGISTER')
+
+const counter = createReducer({ count: 0 }, {
+  [login]: () => {},
+  [register]: () => {}
+}
+
+// sử dụng createSlice
+
+const authSlice = createSlice({
+  name: 'auth',
+  initialState: {},
+  reducers: {
+    login: () => {}
+    register: () => {}
+  }
+})
+
+```
+
+-  VD trên, với `createReducer` dài hơn 1 chút so sánh lượng hàng. Ngoại thực tế sẽ bị lặp lại "auth/" ở đầu tên mỗi loại hành động
+
 ### redux `useSelector`
 
 -  `useSelector` giúp chúng ta lấy `state` từ `store`
