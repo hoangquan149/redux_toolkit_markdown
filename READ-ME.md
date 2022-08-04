@@ -86,7 +86,7 @@ export default counterSlice.reducer
 
 ```
 
-### Phân biệt `createSlice` và `createReducer`
+### So sánh `createSlice` và `createReducer`
 
 -  `createReducer`, kiểm soát dễ hơn đối với names/types `createAction` có thể viết hoa tên action
 -  `createSlice` action types tự sinh tiền tố mặc đinh là field name và `createSlice` sẽ viết ít dài dòng hơn `createReducer`
